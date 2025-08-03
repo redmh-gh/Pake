@@ -446,4 +446,16 @@ window.addEventListener('DOMContentLoaded', _event => {
     topPaddingStyleElement.innerHTML = topPaddingCSS;
     document.head.appendChild(topPaddingStyleElement);
   }
+
+  // 屏蔽梦乡面板开屏声明
+  if (window.location.hostname === 'srgm.dreamplace.cn') {
+    const customSiteCSS = `
+      .arco-modal-container {
+        display: none !important;
+      }
+    `;
+    const customSiteStyleElement = document.createElement('style');
+    customSiteStyleElement.innerHTML = customSiteCSS;
+    document.head.appendChild(customSiteStyleElement);
+  }
 });
