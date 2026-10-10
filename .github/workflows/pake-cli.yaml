@@ -93,6 +93,30 @@ jobs:
         with:
           mode: build
 
+      - name: Install Linux system dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libdbus-1-dev \
+            libsoup2.4-dev \
+            libjavascriptcoregtk-4.0-dev \
+            libwebkit2gtk-4.0-dev \
+            build-essential \
+            curl \
+            wget \
+            file \
+            libxdo-dev \
+            libssl-dev \
+            libgtk-3-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            gnome-video-effects \
+            gnome-video-effects-extra \
+            libglib2.0-dev \
+            libgirepository1.0-dev \
+            pkg-config
+
       - name: Build CLI
         run: pnpm run cli:build
 
