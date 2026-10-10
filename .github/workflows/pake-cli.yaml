@@ -15,7 +15,7 @@ on:
         options:
           - "windows-latest"
           - "macos-latest"
-          - "ubuntu-24.04"
+          - "ubuntu-22.04"
       url:
         description: "Website URL"
         required: true
